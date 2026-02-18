@@ -1,0 +1,22 @@
+============================================================
+GEOMETRY-COMPLEXITY CORRELATION ANALYSIS
+============================================================
+
+## Pearson Correlations
+
+Geometric features: ['distance', 'rate', 'n_physical', 'n_logical', 'avg_stabilizer_weight', 'depth']
+Dynamic features: ['growth_exponent', 'saturation_value', 'krylov_dim']
+
+## Strongest Correlations
+
+
+## Average Correlation by Geometric Feature
+
+  distance: avg|r| = 0.077
+  rate: avg|r| = 0.044
+  n_physical: avg|r| = 0.043
+  n_logical: avg|r| = 0.079
+  avg_stabilizer_weight: avg|r| = 0.057
+  depth: avg|r| = 0.031
+
+============================================================

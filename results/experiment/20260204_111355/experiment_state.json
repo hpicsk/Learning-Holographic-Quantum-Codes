@@ -1,0 +1,21 @@
+{
+  "phases": {
+    "gnn": {
+      "status": "failed",
+      "timestamp": "2026-02-04T11:14:03.244859"
+    },
+    "deeponet": {
+      "status": "failed",
+      "timestamp": "2026-02-04T17:35:43.012578"
+    },
+    "analysis": {
+      "status": "completed",
+      "timestamp": "2026-02-04T17:36:03.886819"
+    },
+    "figures": {
+      "status": "completed",
+      "timestamp": "2026-02-04T17:36:03.887415"
+    }
+  },
+  "last_updated": "2026-02-04T17:36:03.887421"
+}

@@ -1,0 +1,201 @@
+analysis:
+  correlation:
+    bootstrap_samples: 1000
+    confidence_level: 0.95
+    mutual_information: true
+    pearson: true
+    spearman: true
+  holographic:
+    complexity_temperature: true
+    entanglement_geometry: true
+    entropy_distance: true
+    page_curve: true
+  phase_transition:
+    enabled: true
+    n_points: 50
+    parameters:
+    - name: delta
+      range:
+      - 0.0
+      - 3.0
+    - name: h_field
+      range:
+      - 0.0
+      - 2.0
+dataset:
+  cache_dir: data/cache
+  happy_depths:
+    2: 500
+    3: 1000
+    4: 1000
+    5: 1000
+  ldpc_params:
+  - - 7
+    - 4
+    - 3
+  - - 15
+    - 7
+    - 5
+  - - 31
+    - 15
+    - 7
+  n_happy: 20
+  n_ldpc: 10
+  n_random: 5
+  seed: 42
+  test_split: 0.15
+  train_split: 0.7
+  val_split: 0.15
+deeponet:
+  dynamics:
+    n_time_steps: 200
+    n_trajectories_per_code: 10
+    t_max: 20.0
+  model:
+    code_dim: 128
+    fourier_scale: 10.0
+    hamiltonian_dim: 8
+    hidden_dim: 128
+    num_basis: 64
+    trunk_dim: 64
+  physics:
+    enabled: true
+    gradient_regularization: 0.01
+    monotonicity_weight: 0.1
+    positivity_weight: 0.1
+  training:
+    batch_size: 64
+    epochs: 10
+    learning_rate: 0.0005
+    scheduler: cosine
+    weight_decay: 0.0001
+embeddings:
+  poincare:
+    curvature: -1.0
+    embed_dim: 64
+    max_norm: 0.99
+  visualization:
+    colorby: depth
+    plot_2d: true
+    plot_3d: false
+gnn:
+  curriculum:
+    enabled: true
+    stages:
+    - epochs: 50
+      max_qubits: 20
+    - epochs: 75
+      max_qubits: 50
+    - epochs: 75
+      max_qubits: 100
+  loss_weights:
+    distance: 1.0
+    rate: 0.5
+    threshold: 0.3
+  model:
+    dropout: 0.1
+    hidden_dim: 128
+    node_dim: 8
+    num_heads: 4
+    num_layers: 6
+    use_attention: true
+  training:
+    batch_size: 32
+    early_stopping_patience: 20
+    epochs: 10
+    gradient_clip: 1.0
+    learning_rate: 0.001
+    scheduler: cosine
+    warmup_epochs: 5
+    weight_decay: 0.0001
+hamiltonians:
+  ising:
+    J_coupling: 1.0
+    enabled: true
+    h_values:
+    - 0.0
+    - 0.5
+    - 1.0
+    - 2.0
+    n_qubits:
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    periodic: false
+  random_local:
+    enabled: true
+    locality: 2
+    n_qubits_range:
+    - 4
+    - 8
+    n_samples: 500
+  xxz:
+    Delta_values:
+    - 0.0
+    - 0.5
+    - 1.0
+    - 2.0
+    J_xy: 1.0
+    enabled: true
+    h_field: 0.0
+    n_qubits:
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    periodic: false
+hardware:
+  deterministic: false
+  device: auto
+  num_workers: 4
+  pin_memory: true
+  seed: 42
+krylov:
+  features:
+    extract_growth_exponent: true
+    extract_lanczos_coeffs: true
+    extract_saturation: true
+    fit_window:
+    - 0.05
+    - 0.3
+  lanczos_tol: 1.0e-10
+  max_krylov_dim: 100
+  n_time_steps: 100
+  t_max: 10.0
+output:
+  base_dir: results
+  checkpoints_dir: checkpoints
+  figures_dir: figures
+  keep_best: 3
+  log_level: INFO
+  logs_dir: logs
+  save_every: 10
+  tensorboard: true
+  wandb:
+    enabled: false
+    entity: null
+    project: holographic-qec
+presets:
+  debug:
+    dataset:
+      n_happy: 50
+      n_ldpc: 20
+      n_random: 10
+    deeponet:
+      training:
+        epochs: 20
+    gnn:
+      training:
+        batch_size: 8
+        epochs: 10
+  figures:
+    analysis:
+      correlation:
+        bootstrap_samples: 5000
+    output:
+      figures_dir: paper_figures
+  full:
+    pass: true

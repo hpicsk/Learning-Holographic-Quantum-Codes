@@ -1,0 +1,137 @@
+/home/st/miniconda3/envs/qft/lib/python3.12/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+============================================================
+GEOMETRY-COMPLEXITY CORRELATION ANALYSIS
+============================================================
+Loading small code dataset (n_physical <= 10)...
+Generated 661 small codes (n_physical <= 10)
+Loaded 661 test codes
+Computing Krylov complexity with code-space states...
+  Processing code 1/661
+  Processing code 11/661
+  Processing code 21/661
+  Processing code 31/661
+  Processing code 41/661
+  Processing code 51/661
+  Processing code 61/661
+  Processing code 71/661
+  Processing code 81/661
+  Processing code 91/661
+  Processing code 101/661
+  Processing code 111/661
+  Processing code 121/661
+  Processing code 131/661
+  Processing code 141/661
+  Processing code 151/661
+  Processing code 161/661
+  Processing code 171/661
+  Processing code 181/661
+  Processing code 191/661
+  Processing code 201/661
+  Processing code 211/661
+  Processing code 221/661
+  Processing code 231/661
+  Processing code 241/661
+  Processing code 251/661
+  Processing code 261/661
+  Processing code 271/661
+  Processing code 281/661
+  Processing code 291/661
+  Processing code 301/661
+  Processing code 311/661
+  Processing code 321/661
+  Processing code 331/661
+  Processing code 341/661
+  Processing code 351/661
+  Processing code 361/661
+  Processing code 371/661
+  Processing code 381/661
+  Processing code 391/661
+  Processing code 401/661
+  Processing code 411/661
+  Processing code 421/661
+  Processing code 431/661
+  Processing code 441/661
+  Processing code 451/661
+  Processing code 461/661
+  Processing code 471/661
+  Processing code 481/661
+  Processing code 491/661
+  Processing code 501/661
+  Processing code 511/661
+  Processing code 521/661
+  Processing code 531/661
+  Processing code 541/661
+  Processing code 551/661
+  Processing code 561/661
+  Processing code 571/661
+  Processing code 581/661
+  Processing code 591/661
+  Processing code 601/661
+  Processing code 611/661
+  Processing code 621/661
+  Processing code 631/661
+  Processing code 641/661
+  Processing code 651/661
+  Processing code 661/661
+Computed complexity for 661 codes
+Extracting features...
+
+Running correlation analysis...
+
+Top significant correlations:
+  n_physical <-> saturation_value: r=0.938, p=3.10e-305
+  n_physical <-> max_complexity: r=0.933, p=3.38e-295
+  depth <-> saturation_time: r=0.862, p=1.58e-196
+  n_physical <-> saturation_time: r=0.837, p=7.13e-175
+  depth <-> saturation_value: r=0.826, p=3.76e-166
+
+Correlation analysis saved to results/analysis
+
+Running holographic dictionary tests...
+============================================================
+HOLOGRAPHIC DICTIONARY TEST RESULTS
+============================================================
+
+Tests passed: 2/4
+----------------------------------------
+
+[PASS] entropy_distance
+  Prediction: d ~ exp(depth) [S_BH ~ Area]
+  Correlation: r = 0.921
+  P-value: 7.83e-26
+  Details: Exponential fit R²=0.848, Linear r=0.921
+  Fit: a=0.321, b=1.146, r2=0.848
+
+[FAIL] complexity_temperature
+  Prediction: dC_K/dt ~ T (Lloyd bound)
+  Correlation: r = -0.044
+  P-value: 2.61e-01
+  Details: Slope=-0.025±0.022, r=-0.044
+  Fit: slope=-0.025, intercept=1.451, std_err=0.022
+
+[FAIL] page_curve
+  Prediction: C_sat ~ min(k, n-k) [Page curve]
+  Correlation: r = 0.145
+  P-value: 1.81e-04
+  Details: Correlation with Page value: r=0.145, p=1.812e-04
+
+[PASS] entanglement_geometry
+  Prediction: dim(K) ~ bulk geometry
+  Correlation: r = 0.757
+  P-value: 6.58e-124
+  Details: r(depth)=0.757, r(distance)=-0.310
+
+============================================================
+
+INTERPRETATION:
+Moderate evidence for holographic features in complexity dynamics.
+
+Running phase transition analysis...
+  Scanning Delta parameter...
+  Potential critical point at Delta = 2.63
+  Phase transition analysis saved to results/analysis
+
+============================================================
+Analysis complete. Results saved to results/analysis
+============================================================

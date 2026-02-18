@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(done)",
+      "Bash(timeout 60 python:*)",
+      "Bash(python3:*)",
+      "Bash(xargs -I {} sh -c 'echo \"\"==== {} ====\"\" && head -50 {}')",
+      "Bash(pdflatex:*)",
+      "Bash(bibtex:*)",
+      "Bash(pdftotext:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

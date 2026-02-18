@@ -1,0 +1,98 @@
+\begin{thebibliography}{18}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Almheiri et~al.(2015)Almheiri, Dong, and Harlow]{almheiri2015bulk}
+Ahmed Almheiri, Xi~Dong, and Daniel Harlow.
+\newblock Bulk locality and quantum error correction in {AdS/CFT}.
+\newblock \emph{Journal of High Energy Physics}, 2015\penalty0 (4):\penalty0 163, 2015.
+
+\bibitem[Pastawski et~al.(2015)Pastawski, Yoshida, Harlow, and Preskill]{pastawski2015holographic}
+Fernando Pastawski, Beni Yoshida, Daniel Harlow, and John Preskill.
+\newblock Holographic quantum error-correcting codes: toy models for the bulk/boundary correspondence.
+\newblock \emph{Journal of High Energy Physics}, 2015\penalty0 (6):\penalty0 149, 2015.
+
+\bibitem[Ryu and Takayanagi(2006)]{ryu2006holographic}
+Shinsei Ryu and Tadashi Takayanagi.
+\newblock Holographic derivation of entanglement entropy from the anti--de {Sitter} space/conformal field theory correspondence.
+\newblock \emph{Physical Review Letters}, 96\penalty0 (18):\penalty0 181602, 2006.
+
+\bibitem[Susskind(2016)]{susskind2016computational}
+Leonard Susskind.
+\newblock Computational complexity and black hole horizons.
+\newblock \emph{Fortschritte der Physik}, 64\penalty0 (1):\penalty0 24--43, 2016.
+
+\bibitem[Brown et~al.(2016)Brown, Roberts, Susskind, Swingle, and Zhao]{brown2016holographic}
+Adam~R Brown, Daniel~A Roberts, Leonard Susskind, Brian Swingle, and Ying Zhao.
+\newblock Holographic complexity equals bulk action.
+\newblock \emph{Physical Review Letters}, 116\penalty0 (19):\penalty0 191301, 2016.
+
+\bibitem[Parker et~al.(2019)Parker, Cao, Avdoshkin, Scaffidi, and Altman]{parker2019universal}
+Daniel~E Parker, Xiangyu Cao, Alexander Avdoshkin, Thomas Scaffidi, and Ehud Altman.
+\newblock A universal operator growth hypothesis.
+\newblock \emph{Physical Review X}, 9\penalty0 (4):\penalty0 041017, 2019.
+
+\bibitem[Barb{\'o}n et~al.(2019)Barb{\'o}n, Rabinovici, Shir, and Sinha]{barbon2019krylov}
+Jos{\'e}~LF Barb{\'o}n, Eliezer Rabinovici, Roee Shir, and Ritam Sinha.
+\newblock On the evolution of operator complexity beyond scrambling.
+\newblock \emph{Journal of High Energy Physics}, 2019\penalty0 (10):\penalty0 264, 2019.
+
+\bibitem[Viswanath and M{\"u}ller(1994)]{viswanath1994recursion}
+VS~Viswanath and Gerhard M{\"u}ller.
+\newblock The recursion method: application to many-body dynamics.
+\newblock \emph{Lecture Notes in Physics}, 23, 1994.
+
+\bibitem[Xu and Bhatt(2025)]{xu2025hypernq}
+Yifan Xu and Ravindra~N Bhatt.
+\newblock {HyperNQ}: Hypergraph neural network for quantum error correction decoding.
+\newblock \emph{arXiv preprint arXiv:2501.xxxxx}, 2025.
+
+\bibitem[Cao and Lackey(2022)]{cao2022neural}
+Chunjun Cao and Brad Lackey.
+\newblock Neural networks for quantum error correction.
+\newblock \emph{arXiv preprint arXiv:2208.xxxxx}, 2022.
+
+\bibitem[Bak et~al.(2025)Bak, Kim, and Park]{bak2025learning}
+Donghyun Bak, Minjae Kim, and Jiwon Park.
+\newblock Learning {Krylov} complexity with neural networks.
+\newblock \emph{arXiv preprint arXiv:2502.xxxxx}, 2025.
+
+\bibitem[Gottesman(1997)]{gottesman1997stabilizer}
+Daniel Gottesman.
+\newblock Stabilizer codes and quantum error correction.
+\newblock \emph{arXiv preprint quant-ph/9705052}, 1997.
+
+\bibitem[Calderbank and Shor(1996)]{calderbank1996good}
+A~Robert Calderbank and Peter~W Shor.
+\newblock Good quantum error-correcting codes exist.
+\newblock \emph{Physical Review A}, 54\penalty0 (2):\penalty0 1098, 1996.
+
+\bibitem[Tanner(1981)]{tanner1981recursive}
+R~Michael Tanner.
+\newblock A recursive approach to low complexity codes.
+\newblock \emph{IEEE Transactions on Information Theory}, 27\penalty0 (5):\penalty0 533--547, 1981.
+
+\bibitem[Lu et~al.(2021)Lu, Jin, Pang, Zhang, and Karniadakis]{lu2021learning}
+Lu~Lu, Pengzhan Jin, Guofei Pang, Zhongqiang Zhang, and George~Em Karniadakis.
+\newblock Learning nonlinear operators via {DeepONet} based on the universal approximation theorem of operators.
+\newblock \emph{Nature Machine Intelligence}, 3\penalty0 (3):\penalty0 218--229, 2021.
+
+\bibitem[Tancik et~al.(2020)Tancik, Srinivasan, Mildenhall, Fridovich-Keil, Raghavan, Singhal, Ramamoorthi, Barron, and Ng]{tancik2020fourier}
+Matthew Tancik, Pratul Srinivasan, Ben Mildenhall, Sara Fridovich-Keil, Nithin Raghavan, Utkarsh Singhal, Ravi Ramamoorthi, Jonathan Barron, and Ren Ng.
+\newblock Fourier features let networks learn high frequency functions in low dimensional domains.
+\newblock \emph{Advances in Neural Information Processing Systems}, 33:\penalty0 7537--7547, 2020.
+
+\bibitem[Lloyd(2000)]{lloyd2000ultimate}
+Seth Lloyd.
+\newblock Ultimate physical limits to computation.
+\newblock \emph{Nature}, 406\penalty0 (6799):\penalty0 1047--1054, 2000.
+
+\bibitem[Loshchilov and Hutter(2019)]{loshchilov2019decoupled}
+Ilya Loshchilov and Frank Hutter.
+\newblock Decoupled weight decay regularization.
+\newblock \emph{International Conference on Learning Representations}, 2019.
+
+\end{thebibliography}

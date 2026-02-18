@@ -1,0 +1,32 @@
+============================================================
+GEOMETRY-COMPLEXITY CORRELATION ANALYSIS
+============================================================
+
+## Pearson Correlations
+
+Geometric features: ['distance', 'rate', 'n_physical', 'n_logical', 'avg_stabilizer_weight', 'depth']
+Dynamic features: ['growth_exponent', 'saturation_value', 'krylov_dim', 'saturation_time', 'max_complexity']
+
+## Strongest Correlations
+
+  n_physical <-> saturation_value: r=0.938 (p=3.10e-305), 95% CI: [0.917, 0.954]
+  n_physical <-> max_complexity: r=0.933 (p=3.38e-295), 95% CI: [0.912, 0.950]
+  depth <-> saturation_time: r=0.862 (p=1.58e-196), 95% CI: [0.825, 0.895]
+  n_physical <-> saturation_time: r=0.837 (p=7.13e-175), 95% CI: [0.803, 0.865]
+  depth <-> saturation_value: r=0.826 (p=3.76e-166), 95% CI: [0.798, 0.849]
+  depth <-> max_complexity: r=0.810 (p=7.84e-155), 95% CI: [0.782, 0.835]
+  n_physical <-> krylov_dim: r=0.761 (p=4.85e-126), 95% CI: [0.724, 0.795]
+  depth <-> krylov_dim: r=0.757 (p=6.58e-124), 95% CI: [0.710, 0.804]
+  distance <-> growth_exponent: r=-0.532 (p=1.40e-49), 95% CI: [-0.665, -0.342]
+  rate <-> saturation_value: r=-0.403 (p=3.73e-27), 95% CI: [-0.452, -0.352]
+
+## Average Correlation by Geometric Feature
+
+  distance: avg|r| = 0.314
+  rate: avg|r| = 0.289
+  n_physical: avg|r| = 0.727
+  n_logical: avg|r| = 0.073
+  avg_stabilizer_weight: avg|r| = 0.052
+  depth: avg|r| = 0.684
+
+============================================================

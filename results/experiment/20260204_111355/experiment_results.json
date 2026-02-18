@@ -1,0 +1,24 @@
+{
+  "gnn": {
+    "error": "Using a target size (torch.Size([1])) that is different to the input size (torch.Size([1, 1])) is deprecated. Please ensure they have the same size."
+  },
+  "deeponet": {
+    "error": "Object of type float32 is not JSON serializable"
+  },
+  "analysis": {
+    "n_samples": 200,
+    "n_significant_correlations": 0,
+    "holographic_tests_passed": 0,
+    "holographic_tests_total": 4,
+    "top_correlations": []
+  },
+  "metadata": {
+    "last_run_timestamp": "2026-02-04T17:36:03.887533",
+    "last_run_elapsed_seconds": 22928.09577035904,
+    "config_path": "configs/default.yaml",
+    "preset": null,
+    "resumed": false,
+    "timestamp": "2026-02-04T17:36:03.887541",
+    "elapsed_seconds": 22928.09577035904
+  }
+}

@@ -1,0 +1,102 @@
+/home/st/miniconda3/envs/qft/lib/python3.12/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+======================================================================
+WEAKNESS RESPONSE ANALYSIS
+======================================================================
+
+Generating codes...
+Generated 661 small codes (n_physical <= 12)
+  Generated 661 codes
+
+======================================================================
+W1: FINITE-SIZE SCALING ANALYSIS
+======================================================================
+  Computed 661 code trajectories
+
+   n  N_codes  r(dist,growth)  r(dist,max_co)  r(dist,satura)
+----------------------------------------------------------------------
+   4       31     -0.581***      -0.499**       -0.442*   
+   5       32     -0.620***      -0.624***      -0.538**  
+   6       61     -0.717***      -0.485***      -0.404**  
+   7      112     -0.209*        -0.286**       -0.222*   
+   8       61     -0.866***      -0.521***      -0.531*** 
+   9       91     -0.838***      -0.576***      -0.557*** 
+  10       91     -0.871***      -0.871***      -0.872*** 
+  11       91     -0.884***      -0.849***      -0.859*** 
+  12       91     -0.913***      -0.988***      -0.993*** 
+
+--- Finite-size scaling fit: r(n) = r_inf + a * n^(-b) ---
+
+  distance vs growth_exponent: fit failed (`x0` is infeasible.)
+
+  distance vs max_complexity: fit failed (`x0` is infeasible.)
+
+  distance vs saturation_value: fit failed (`x0` is infeasible.)
+
+======================================================================
+W2: MULTI-SEED AVERAGING ANALYSIS
+======================================================================
+  Processed 661 codes (661 with k > 0)
+
+  Trajectory coefficient of variation:
+    Mean CV: 0.0337
+    Median CV: 0.0205
+    Max CV:  0.2994
+
+--- Single-seed vs. Averaged Correlations ---
+
+Pair                                   r_avg        p_avg  r_partial    p_partial
+--------------------------------------------------------------------------------
+  distance vs mean_growth_exponent   -0.706    1.15e-100     -0.700     2.92e-98
+  distance vs mean_max_complexity    -0.355     4.81e-21     -0.676     1.29e-89
+  distance vs mean_saturation        -0.345     5.91e-20     -0.673     1.56e-88
+
+--- Variance Decomposition ---
+  Between-code variance (signal): 236.0980
+  Mean within-code variance (seed noise): 0.4340
+  Fraction due to code structure: 0.998
+  -> Estimated R² upper bound with perfect model: 0.998
+
+======================================================================
+W3: IMPROVED HOLOGRAPHIC TESTS
+======================================================================
+  Computed 661 codes
+
+--- Lloyd Bound: dC_K/dt ~ ΔE (energy variance as temperature) ---
+  Raw correlation (ΔE, α): r = -0.250, p = 1.04e-10
+  Partial (controlling for n): r = -0.710, p = 1.38e-100
+
+  Within-size Lloyd bound correlations:
+    n=4: r = 0.387*, p = 3.15e-02
+    n=5: r = 0.083, p = 6.53e-01
+    n=6: r = 0.094, p = 4.70e-01
+    n=7: r = 0.241*, p = 1.06e-02
+    n=8: r = 0.222, p = 8.58e-02
+    n=9: r = 0.167, p = 1.14e-01
+    n=10: r = 0.292**, p = 5.02e-03
+    n=11: r = 0.377***, p = 2.28e-04
+    n=12: r = 0.484***, p = 1.19e-06
+  PASS: False
+
+--- Page Curve: C_sat ~ min(k, n-k) (partial correlation) ---
+  Raw correlation (page_value, C_sat): r = 0.150, p = 1.04e-04
+  Partial (controlling for n): r = -0.135, p = 4.97e-04
+  Normalized C_sat/2^n vs page_value: r = -0.231, p = 1.76e-09
+
+  Within-size Page curve correlations:
+    n=6: r = 0.089, p = 4.97e-01
+    n=7: r = -0.050, p = 6.00e-01
+    n=8: r = -0.019, p = 8.84e-01
+    n=9: r = -0.006, p = 9.56e-01
+    n=10: r = 0.164, p = 1.20e-01
+    n=11: r = 0.133, p = 2.10e-01
+    n=12: r = 0.115, p = 2.80e-01
+  PASS (partial or normalized): False
+
+--- Holographic Test Summary (Improved) ---
+  Original: 2/4 pass
+  Improved: 2/4 pass
+
+======================================================================
+All results saved to results/analysis/weakness_response/weakness_response_results.json
+======================================================================

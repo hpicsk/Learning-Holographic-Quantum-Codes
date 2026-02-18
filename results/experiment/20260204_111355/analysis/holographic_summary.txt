@@ -1,0 +1,37 @@
+============================================================
+HOLOGRAPHIC DICTIONARY TEST RESULTS
+============================================================
+
+Tests passed: 0/4
+----------------------------------------
+
+[FAIL] entropy_distance
+  Prediction: d ~ exp(depth) [S_BH ~ Area]
+  Correlation: r = -0.348
+  P-value: 4.48e-07
+  Details: Exponential fit R²=0.109, Linear r=-0.348
+  Fit: a=6.143, b=-0.081, r2=0.109
+
+[FAIL] complexity_temperature
+  Prediction: dC_K/dt ~ T (Lloyd bound)
+  Correlation: r = -0.075
+  P-value: 2.90e-01
+  Details: Slope=-0.062±0.059, r=-0.075
+  Fit: slope=-0.062, intercept=1.053, std_err=0.059
+
+[FAIL] page_curve
+  Prediction: C_sat ~ min(k, n-k) [Page curve]
+  Correlation: r = -0.082
+  P-value: 2.49e-01
+  Details: Correlation with Page value: r=-0.082, p=2.488e-01
+
+[FAIL] entanglement_geometry
+  Prediction: dim(K) ~ bulk geometry
+  Correlation: r = 0.051
+  P-value: 4.30e-01
+  Details: r(depth)=0.051, r(distance)=-0.056
+
+============================================================
+
+INTERPRETATION:
+No significant holographic signatures detected.

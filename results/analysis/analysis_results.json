@@ -1,0 +1,21 @@
+{
+  "n_codes": 661,
+  "n_complexity_results": 661,
+  "geometric_features": [
+    "distance",
+    "rate",
+    "n_physical",
+    "n_logical",
+    "avg_stabilizer_weight",
+    "depth"
+  ],
+  "dynamic_features": [
+    "growth_exponent",
+    "saturation_value",
+    "krylov_dim",
+    "saturation_time",
+    "max_complexity"
+  ],
+  "holographic_tests_passed": 2,
+  "timestamp": "2026-02-16T23:06:13.582673"
+}
