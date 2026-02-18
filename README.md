@@ -1,177 +1,100 @@
 # Learning Holographic Quantum Codes
 
-Neural Networks for Emergent Geometry and Complexity Dynamics
+**Code Geometry Constrains Krylov Complexity Dynamics**
 
 ## Overview
 
-This project implements a unified framework combining:
-- **GNN-based holographic code design** (Proposal 1)
-- **DeepONet-based Krylov complexity learning** (Proposal 3)
-- **Geometry-complexity correlation analysis** for AdS/CFT testing
+A unified machine learning framework that reveals how quantum error-correcting code geometry constrains Krylov complexity dynamics, providing computational evidence for holographic intuitions connecting code distance to constrained operator evolution.
+
+The framework combines:
+- **Hypergraph GNN** for stabilizer code property prediction (distance MAE 0.10, 96.4% accuracy)
+- **DeepONet** conditioned on GNN embeddings for Krylov complexity trajectory prediction ($R^2 = 0.67$)
+- **Partial correlation analysis** revealing geometry--complexity anti-correlations ($r_{\text{partial}} = -0.60$, $p = 5.1 \times 10^{-65}$)
+
+Across 661 stabilizer codes ($n \leq 12$), we show that code distance constrains complexity growth, with within-size correlations strengthening to $r = -0.91$ at $n=12$.
 
 ## Project Structure
 
 ```
 holographic_qec/
-├── codes/                    # Quantum code generation
-│   ├── happy_codes.py        # HaPPY holographic codes
+├── codes/
+│   ├── happy_codes.py        # HaPPY holographic code generation
 │   ├── stabilizer.py         # Stabilizer code utilities
-│   └── dataset.py            # Dataset generation (coming soon)
-├── gnn/                      # Graph neural networks
+│   └── dataset.py            # Dataset generation for 661 codes
+├── gnn/
 │   ├── hypergraph_conv.py    # Hypergraph convolution layers
-│   ├── code_generator.py     # Conditional generation (coming soon)
-│   └── embeddings.py         # Geometric embeddings (coming soon)
-├── dynamics/                 # Complexity dynamics
+│   ├── code_generator.py     # Conditional code generation
+│   └── embeddings.py         # Geometric embeddings
+├── dynamics/
 │   ├── krylov.py             # Lanczos algorithm & C_K(t)
-│   ├── deeponet.py           # DeepONet architecture (coming soon)
-│   └── hamiltonian.py        # Hamiltonian builders (coming soon)
-├── analysis/                 # Correlation analysis
-│   ├── correlation.py        # Statistical analysis (coming soon)
-│   └── holographic.py        # AdS/CFT dictionary (coming soon)
-└── utils/                    # Utilities
-    ├── metrics.py            # Evaluation metrics (coming soon)
-    └── visualization.py      # Plotting (coming soon)
+│   ├── deeponet.py           # DeepONet architecture
+│   └── hamiltonian.py        # Hamiltonian builders (XXZ, Ising, random)
+├── analysis/
+│   ├── correlation.py        # Partial correlation analysis
+│   └── holographic.py        # AdS/CFT dictionary tests
+└── utils/
+    └── visualization.py      # Plotting utilities
 
 scripts/
 ├── prototype.py              # Prototype validation
-├── train_gnn.py              # GNN training (coming soon)
-├── train_deeponet.py         # DeepONet training (coming soon)
-└── analyze_correlation.py    # Analysis script (coming soon)
+├── run_experiments.py        # Full experiment pipeline
+├── train_gnn.py              # GNN training
+├── train_deeponet.py         # DeepONet training
+├── analyze_correlation.py    # Correlation analysis
+├── analyze_extended.py       # Extended analysis
+├── analyze_weaknesses.py     # Robustness checks
+└── generate_paper_figures.py # Paper figure generation
 
+paper/                        # NeurIPS 2026 manuscript
 configs/
-└── default.yaml              # Hyperparameters (coming soon)
+└── default.yaml              # Hyperparameters
 ```
 
 ## Installation
 
 ```bash
-# Create virtual environment
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# or: venv\Scripts\activate  # Windows
+source venv/bin/activate
 
-# Install dependencies
 pip install -r requirements.txt
 ```
 
 ## Quick Start
 
-Run the prototype validation script:
-
 ```bash
-python scripts/prototype.py
+# Run the full experiment pipeline
+python scripts/run_experiments.py
+
+# Or run individual components:
+python scripts/train_gnn.py              # Train hypergraph GNN
+python scripts/train_deeponet.py         # Train DeepONet
+python scripts/analyze_correlation.py    # Correlation analysis
+python scripts/generate_paper_figures.py # Reproduce paper figures
 ```
 
-This will:
-1. Generate HaPPY holographic codes
-2. Train a simple GNN to predict code distance
-3. Compute Krylov complexity for test Hamiltonians
-4. Analyze geometry-complexity correlations
-5. Generate visualization plots in `results/`
+## Key Results
 
-## Core Components
-
-### 1. HaPPY Code Generator
-
-```python
-from holographic_qec.codes import create_happy_code
-
-# Create depth-2 HaPPY code
-code = create_happy_code(depth=2)
-print(f"Code: {code.stabilizer_code.code_parameters}")
-print(f"Geometric features: {code.get_geometric_features()}")
-```
-
-### 2. Hypergraph GNN
-
-```python
-from holographic_qec.gnn import HypergraphNN, CodeDistancePredictor
-
-# Create model
-model = CodeDistancePredictor(
-    node_features=4,
-    hidden_dim=64,
-    num_layers=3
-)
-
-# Convert code to graph format
-node_feat, edge_idx, hyperedges = code.stabilizer_code.to_graph()
-
-# Predict distance
-pred = model(torch.tensor(node_feat), hyperedges)
-```
-
-### 3. Krylov Complexity
-
-```python
-from holographic_qec.dynamics import (
-    compute_krylov_complexity,
-    build_xxz_hamiltonian
-)
-
-# Build Hamiltonian
-H = build_xxz_hamiltonian(n_qubits=6, J_xy=1.0, J_z=0.5)
-
-# Compute complexity curve
-result = compute_krylov_complexity(H, psi0, t_max=10.0)
-print(f"Growth exponent: {result.growth_exponent}")
-print(f"Saturation value: {result.saturation_value}")
-```
-
-## Research Phases
-
-### Phase 1: Code Design via GNN (Weeks 1-6)
-- [x] Basic HaPPY code generation
-- [x] Hypergraph convolution layers
-- [x] Code distance prediction
-- [ ] Full dataset generation (5000+ codes)
-- [ ] Conditional code generation
-- [ ] Geometric embedding extraction
-
-### Phase 2: Complexity Dynamics via DeepONet (Weeks 7-10)
-- [x] Krylov complexity computation (Lanczos)
-- [x] XXZ and Ising Hamiltonians
-- [ ] DeepONet architecture
-- [ ] Physics-informed constraints
-- [ ] Training pipeline
-
-### Phase 3: Geometry-Dynamics Analysis (Weeks 11-14)
-- [x] Basic correlation analysis
-- [ ] Comprehensive statistical tests
-- [ ] Phase transition detection
-- [ ] AdS/CFT dictionary validation
-
-### Phase 4: Hardware Validation (Future)
-- [ ] NISQ implementation
-- [ ] Noise characterization
-- [ ] Prediction validation
-
-## Key Innovations
-
-1. **Conditional Code Generation**: First GNN-based inverse design for holographic codes
-2. **Physics-Constrained Learning**: DeepONet respects stabilizer code structure
-3. **Empirical Holography**: First computational test of geometry-complexity correspondence
+| Component | Metric | Value |
+|-----------|--------|-------|
+| GNN distance prediction | MAE | 0.10 |
+| GNN distance prediction | Accuracy | 96.4% |
+| DeepONet (full) | $R^2$ | 0.67 |
+| DeepONet (no code info) | $R^2$ | -10.1 |
+| Distance vs. max $C_K$ | $r_{\text{partial}}$ | -0.60 |
+| Within-size ($n=12$) | $r(d, \alpha)$ | -0.91 |
+| Between-code variance | share | 99.8% |
 
 ## Dependencies
 
 - PyTorch >= 2.0.0
 - PyTorch Geometric >= 2.3.0
 - Qiskit >= 1.0.0
-- TensorNetwork >= 0.4.0
 - NumPy, SciPy, Matplotlib
 
 ## Citation
 
 If you use this code in your research, please cite:
 
-```bibtex
-@software{holographic_qec,
-  title={Learning Holographic Quantum Codes},
-  author={PhD Research Project},
-  year={2026},
-  url={https://github.com/xxx/holographic-qec}
-}
-```
 
 ## License
 
@@ -179,4 +102,4 @@ MIT License
 
 ## Contact
 
-For questions or collaboration, please open an issue.
+For questions or collaboration, please open an issue or contact krml919@korea.ac.kr.
