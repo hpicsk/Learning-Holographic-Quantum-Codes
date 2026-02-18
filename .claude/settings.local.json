@@ -10,7 +10,8 @@
       "Bash(xargs -I {} sh -c 'echo \"\"==== {} ====\"\" && head -50 {}')",
       "Bash(pdflatex:*)",
       "Bash(bibtex:*)",
-      "Bash(pdftotext:*)"
+      "Bash(pdftotext:*)",
+      "Bash(zip:*)"
     ],
     "deny": [],
     "ask": []
